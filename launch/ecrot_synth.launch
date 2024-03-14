@@ -1,0 +1,56 @@
+<launch>
+
+  <!-- CMax-SLAM node -->
+  <node name="cmax_slam" pkg="cmax_slam" type="cmax_slam" output="screen" args="--v 0">
+
+    <!-- Topics -->
+    <param name="events_topic" value="/cam0/events" />
+    <param name="camera_info_topic" value="/cam0/camera_info" />
+
+    <!-- COMMON PARAMS -->
+    <!-- Objective function to be optimized -->
+    <param name="contrast_measure" value="0" /> <!-- 0=Variance, 1=Mean Square, etc.-->
+    <!-- Event warping options -->
+    <param name="frontend_blur_sigma" value="1.0" /> <!-- Gaussian blurring for the local CMax, in front-end -->
+    <param name="backend_blur_sigma" value="1.0" /> <!-- Gaussian blurring for the global CMax, in back-end -->
+    <param name="event_batch_size" value="100" /> <!-- Number of events in each event mini-batch -->
+    <!-- Event subsampling -->
+    <param name="frontend_event_sample_rate" value="1" /> <!-- Uniform event sampling in front-end -->
+    <param name="backend_event_sample_rate" value="1" /> <!-- Further uniform event sampling in back-end -->
+
+    <!-- FRONT-END PARAMS -->
+    <param name="num_events_per_packet" value="70000" /> <!-- bicycle=70000; bay,town=200000; street,city=250000; -->
+    <param name="dt_ang_vel" value="0.01" />  <!-- Angular velocity frequency f = 1/dt_ang_vel -->
+    <param name="show_local_iwe" value="true" /> <!-- Whether to publish local IWEs -->
+
+    <!-- BACK-END PARAMS -->
+    <!-- Sliding window settings-->
+    <param name="backend_time_window_size" value="0.2" /> <!-- Size of the sliding window [second] -->
+    <param name="backend_sliding_window_stride" value="0.1" /> <!-- Stride of the sliding window [second] -->
+    <!-- Trajectory settings -->
+    <param name="spline_degree" value="1" /> <!-- Degree of the camera spline trajectory: 1=Linear, 3=Cubic -->
+    <param name="dt_knots" value="0.05" /> <!-- Time gap between the control poses of the spline trajectory -->
+    <!-- Pano map settings -->
+    <param name="pano_height" value="512" /> <!-- Height of the panoramic map (pano_width = 2*pano_height) -->
+    <param name="backend_min_ev_rate" value="10000" /> <!-- Minimal event rate to launch the backend [ev/s] -->
+    <param name="max_update_times" value="200" /> <!-- Max updating times for the panoramic map (updating frequency: 20Hz -->
+    <param name="Y_angle" value="90.0" /> <!-- Set the starting point of the camera FOV (initial yaw) [deg] -->
+    <param name="gamma" value="0.75" />
+    <!-- Visualization -->
+    <param name="show_pano_map" value="true" />
+    <param name="draw_FOV" value="true" />
+  </node>
+
+  <!-- Play rosbag -->
+  <node pkg="rosbag" type="play" name="player" args="-d 1.0 -r 1.0 /home/shuang/datasets/ESIM_simulator/bicycle/events.bag" />
+
+  <!-- Visualize local motion-compensated images of warped events -->
+  <node name="local_iwe_view" pkg="image_view" type="image_view">
+    <remap from="image" to="local_iwe" />
+    <param name="autosize" value="false" />
+  </node>
+
+  <!-- Display the panoramic map using rqt_image_view -->
+  <node name="image_view" pkg="rqt_image_view" type="rqt_image_view" />
+
+</launch>
