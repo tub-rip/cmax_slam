@@ -22,7 +22,8 @@ If you use this work in your research, please consider citing:
   year          = 2024,
   volume        = {},
   number        = {},
-  pages         = {1--20}
+  pages         = {1--20},
+  doi           = {10.1109/TRO.2024.3378443}
 }
 ```
 
