@@ -25,9 +25,7 @@ If you use this work in your research, please consider citing:
   pages         = {1--20},
   doi           = {10.1109/TRO.2024.3378443}
 }
-```
 
-```bibtex
 @InProceedings{Gallego18cvpr,
   author        = {Guillermo Gallego and Henri Rebecq and Davide Scaramuzza},
   title         = {A Unifying Contrast Maximization Framework for Event Cameras,
@@ -62,7 +60,8 @@ If you use this work in your research, please consider citing:
 
 ## [Event Camera Rotation Dataset (ECRot)](https://github.com/tub-rip/ECRot)
 
-We also release the dataset that we made, see and download it at [here](https://github.com/tub-rip/ECRot). The instructions of running CMax-SLAM on the ECRot datasets can be found [here](https://github.com/tub-rip/cmax_slam/blob/main/docs/test_datasets.md).
+We also release the dataset that we made, see and download it from [here](https://github.com/tub-rip/ECRot). 
+The instructions of running CMax-SLAM on the ECRot datasets can be found [here](https://github.com/tub-rip/cmax_slam/blob/main/docs/test_datasets.md).
 
 ## Acknowledgements
 
