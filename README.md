@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/a29ea696-7b4e-476d-abf1-430fc748494e)# CMax-SLAM
+# CMax-SLAM
 
 Official repository for [**CMax-SLAM: Event-based Rotational-Motion Bundle Adjustment and SLAM System using Contrast Maximization**](https://arxiv.org/pdf/2403.08119), **IEEE T-RO 2024**, by [Shuang Guo](https://www.linkedin.com/in/shuang-guo-00b664266) and [Guillermo Gallego](https://sites.google.com/view/guillermogallego).
 <h2 align="left">
