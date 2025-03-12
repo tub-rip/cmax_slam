@@ -1,6 +1,6 @@
 # CMax-SLAM
 
-Official repository for [**CMax-SLAM: Event-based Rotational-Motion Bundle Adjustment and SLAM System using Contrast Maximization**](https://arxiv.org/pdf/2403.08119), **IEEE T-RO 2024**, by [Shuang Guo](https://www.linkedin.com/in/shuang-guo-00b664266) and [Guillermo Gallego](https://sites.google.com/view/guillermogallego).
+Official repository for [**CMax-SLAM: Event-based Rotational-Motion Bundle Adjustment and SLAM System using Contrast Maximization**](https://arxiv.org/pdf/2403.08119), **IEEE T-RO 2024**, by [Shuang Guo](https://shuang1997.github.io/) and [Guillermo Gallego](http://www.guillermogallego.es).
 <h2 align="left">
 
 [Paper](https://doi.org/10.1109/TRO.2024.3378443) | [PDF](https://arxiv.org/pdf/2403.08119) | [Poster](https://drive.google.com/file/d/1Y1xkWi1Xxfr7SlKqGOsKtRBfPG9cMthk/view?usp=sharing) | [Video](https://youtu.be/17VWTuSkgPs) | [Dataset](https://github.com/tub-rip/ECRot)
@@ -72,5 +72,9 @@ This code leverages the following repository for computing the derivative of Lie
 
 * [Research page (TU Berlin RIP lab)](https://sites.google.com/view/guillermogallego/research/event-based-vision)
 * [Course at TU Berlin](https://sites.google.com/view/guillermogallego/teaching/event-based-robot-vision)
+* [EPBA: Event-based Photometric Bundle Adjustment](https://github.com/tub-rip/epba)
+* [EMBA: Event-based Mosaicing Bundle Adjustment (ECCV 2024)](https://github.com/tub-rip/emba)
+* [Secrets of Event-Based Optical Flow (TPAMI 2024)](https://github.com/tub-rip/event_based_optical_flow)
+* [ES-PTAM: Event-based Stereo Parallel Tracking and Mapping](https://github.com/tub-rip/ES-PTAM)
 * [Survey paper](http://rpg.ifi.uzh.ch/docs/EventVisionSurvey.pdf)
 * [List of Resources](https://github.com/uzh-rpg/event-based_vision_resources)
